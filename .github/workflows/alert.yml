@@ -7,6 +7,12 @@ jobs:
   Alerts:
     runs-on: ubuntu-latest
     steps:
+    - name: Configure AWS credentials for CLC Production
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        #aws-region: ${{ secrets.PROD_EKS_REGION }}
     - name: Downloading aws retriever
       run: |
         mkdir -p awsRetriever
@@ -15,4 +21,5 @@ jobs:
         wget https://github.com/dtylman/AWSRetriever/releases/download/rc3/AWSRetriever_0_1_0_14.zip
         unzip AWSRetriever_0_1_0_14.zip
         cd AWSRetriever_0_1_0_14
-        ls
+        AWSRetriever.exe -r -p ec2.profile.js -o objects.json
+        cat object.json

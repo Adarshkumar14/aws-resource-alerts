@@ -21,5 +21,13 @@ jobs:
         wget https://github.com/dtylman/AWSRetriever/releases/download/rc3/AWSRetriever_0_1_0_14.zip
         unzip AWSRetriever_0_1_0_14.zip
         cd AWSRetriever_0_1_0_14
-        mono AWSRetriever.exe -r -p default.profile.js -o objects.json
-        cat objects.json
+        #mono AWSRetriever.exe -r -p default.profile.js -o objects.json
+        #cat objects.json
+        cd ..
+        git clone https://github.com/drugo76/json2csv.git
+        sudo apt-get install pip3 -y
+        pip3 install python3
+        cd json2csv
+        python3 json2csv.py -i ../AWSRetriever_0_1_0_14/objects.json -o file.csv
+        ls
+

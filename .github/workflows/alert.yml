@@ -12,7 +12,7 @@ jobs:
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        #aws-region: ${{ secrets.PROD_EKS_REGION }}
+        aws-region: "ap-south-1"
     - name: Downloading aws retriever
       run: |
         mkdir -p awsRetriever

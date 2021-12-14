@@ -22,6 +22,6 @@ jobs:
         unzip AWSRetriever_0_1_0_14.zip
         cd AWSRetriever_0_1_0_14
         curl -O https://raw.githubusercontent.com/Adarshkumar14/aws-resource-alerts/main/ec2.profile.js
-        mono AWSRetriever.exe -r -p ec2.profile.js -o objects.json
+        mono AWSRetriever.exe -r -p default.profile.js -o objects.json
         cat objects.json
 

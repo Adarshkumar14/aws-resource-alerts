@@ -28,6 +28,6 @@ jobs:
       id: slack
       uses: slackapi/slack-github-action@v1.16.0
       with:
-        payload: awsRetriever/AWSRetriever_0_1_0_14/objects.json # This data can be any valid JSON from a previous step in the GitHub Action
+        payload: objects.json # This data can be any valid JSON from a previous step in the GitHub Action
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

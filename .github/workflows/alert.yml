@@ -26,6 +26,7 @@ jobs:
         cat objects.json
     - name: Send custom JSON data to Slack workflow
       id: slack
+      run: cd awsRetriever/AWSRetriever_0_1_0_14
       uses: slackapi/slack-github-action@v1.16.0
       with:
         payload: objects.json # This data can be any valid JSON from a previous step in the GitHub Action
